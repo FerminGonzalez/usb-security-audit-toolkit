@@ -1,0 +1,37 @@
+; =====================================================================
+;  USB Security Audit Toolkit - autorun.inf
+;  ASCII puro. CRLF. Sin BOM.
+; =====================================================================
+;
+;  LEASE ESTO ANTES DE CONFIAR EN AUTORUN.
+;
+;  Este archivo es INERTE en Windows moderno. Windows Vista y posteriores
+;  desactivan AutoRun por politica para unidades USB y medios extraibles,
+;  y Windows 10/11 ademas ignoran AutoRun cuando el dispositivo no esta
+;  en la lista blanca del usuario. No se ejecutara INICIAR.cmd solo por
+;  insertar el USB. Si el equipo tiene AutoRun habilitado por politica de
+;  grupo, esa politica es la que decide, no este archivo.
+;
+;  Se incluye unicamente por:
+;    1) Compatibilidad con equipos antiguos (Windows XP/2003 y anteriores)
+;       donde AutoRun si funcionaba en unidades extraibles.
+;    2) Que el volumen tenga etiqueta y un icono reconocible en el
+;       explorador de archivos.
+;
+;  Si necesita ejecucion automatica en equipos modernos, use la tarea
+;  programada opcional: PREPARAR-AUTORUN.ps1 (requiere administrador).
+;  Esa tarea deja persistencia visible para un analista forense.
+;
+;  Para ejecutar la auditoria manualmente: doble clic en INICIAR.cmd.
+;
+; =====================================================================
+
+[autorun]
+open=INICIAR.cmd
+icon=INICIAR.cmd,0
+label=USB Security Audit Toolkit
+action=Ejecutar auditoria
+; shell\auditar es una entrada de menu contextual para equipos antiguos.
+shell\auditar=Ejecutar auditoria de seguridad
+shell\auditar\command=INICIAR.cmd
+; Los equipos modernos muestran solo la etiqueta del volumen.

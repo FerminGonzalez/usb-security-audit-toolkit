@@ -1,0 +1,21 @@
+{
+  "tool_version": "1.0.0",
+  "web": {
+    "targets": [],
+    "timeout_s": 15
+  },
+  "network": {
+    "dns_test_hosts": [
+      "www.google.com",
+      "www.cloudflare.com",
+      "www.microsoft.com"
+    ],
+    "ping_count": 4
+  },
+  "hardening": {
+    "skip_controls": []
+  },
+  "report": {
+    "organization": ""
+  }
+}

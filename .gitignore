@@ -1,0 +1,17 @@
+# Evidencia generada por las auditorias (contiene datos del equipo auditado)
+/evidencia/
+**/evidencia/
+
+# Logs y temporales
+*.log
+*.tmp
+*.bak
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
